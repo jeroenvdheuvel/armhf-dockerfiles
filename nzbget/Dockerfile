@@ -6,7 +6,8 @@ RUN apk update && apk add ca-certificates && \
     mkdir /opt && cd /opt && \
     wget -O nzbget-linux.run https://github.com/nzbget/nzbget/releases/download/v$NZBGET_VERSION/nzbget-$NZBGET_VERSION-bin-linux.run && \
     /bin/sh /opt/nzbget-linux.run && \
-    rm /opt/nzbget-linux.run 
+    rm /opt/nzbget-linux.run && \
+    rm -rf /var/cache/apk/*
 
 EXPOSE 6789
 
